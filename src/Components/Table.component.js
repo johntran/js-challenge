@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import TableHeader from './TableHeader.component'
-import TableRow from './TableRow.component'
+import TableHeader from './TableHeader.component';
+import TableRow from './TableRow.component';
+import styles from './componentStyles.scss';
 
-export const Table = ({tableData}) => {
-    console.log(tableData)
-    //const headers = Object.keys(tableData)
-    //                      .map(header => header)
-    //const rows = tableData.
+export const Table = ({headers, rows}) => {
+    const {table} = styles;
     return (
-    <div>
-        <TableHeader/>
-        <TableRow/>
+    <div className={table}>
+        <TableHeader headers={headers}/>
+        {rows.map((row, index) => <TableRow key={index} row={row}/>)}
     </div>)
 }
 

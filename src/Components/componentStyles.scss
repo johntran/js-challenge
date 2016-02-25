@@ -1,0 +1,24 @@
+//.tableHeader {
+//  display: flex;
+//}
+.flex {
+  display: flex;
+}
+.table {
+  @extend .flex;
+  flex-flow: column nowrap;
+}
+
+.tableCell {
+  @extend .flex;
+  flex-basis: 15%;
+}
+
+.tableHeader {
+  @extend .flex;
+  flex-flow: row nowrap;
+}
+
+.tableRow {
+  @extend .tableHeader;
+}
