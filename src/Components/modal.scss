@@ -1,0 +1,22 @@
+@import "flex";
+
+.fieldContainer {
+  @extend .flexRow;
+}
+
+.modalColumn {
+  @extend .flexColumn;
+  flex-basis: 40%;
+}
+
+.leftColumn {
+  @extend .modalColumn;
+}
+
+.rightColumn {
+  @extend .modalColumn;
+}
+
+.notesContainer {
+
+}

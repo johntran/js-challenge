@@ -1,12 +1,19 @@
-//.tableHeader {
-//  display: flex;
-//}
-.flex {
-  display: flex;
+@import "flex",
+"modal";
+
+.addButtonContainer {
+  margin: 0 0 0 auto;
 }
+
+.inputFieldContainer {
+  @extend .flexColumn;
+  max-width: 150px;
+}
+
+//Table
+
 .table {
-  @extend .flex;
-  flex-flow: column nowrap;
+  @extend .flexColumn;
 }
 
 .tableCell {
@@ -15,10 +22,10 @@
 }
 
 .tableHeader {
-  @extend .flex;
-  flex-flow: row nowrap;
+  @extend .flexRow;
 }
 
 .tableRow {
   @extend .tableHeader;
 }
+
