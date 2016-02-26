@@ -22,7 +22,13 @@ export function receivedContacts(contacts) {
     }
 }
 
-
+export const UPDATE_FILTER = 'UPDATE_FILTER';
+export function updateFilter(query) {
+    return {
+        type: UPDATE_FILTER,
+        query
+    }
+}
 
 export function fetchContacts() {
     return dispatch => {

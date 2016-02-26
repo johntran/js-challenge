@@ -93,6 +93,7 @@ export class App extends Component {
         <Table
           headers={headers}
           rows={contacts ? contacts : []}
+          filter={''}
         />
       </div>
     );

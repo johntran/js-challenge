@@ -3,8 +3,16 @@ import TableHeader from './TableHeader.component';
 import TableRow from './TableRow.component';
 import styles from './componentStyles.scss';
 
-export const Table = ({headers, rows}) => {
+function applyFilter(rows, query) {
+    const filteredRows = rows.filter((row, index) => {
+        return row.some(cell => cell.includes(query))
+    })
+    return filteredRows
+}
+
+export const Table = ({headers, rows, filter}) => {
     const {table} = styles;
+    if(filter) rows = applyFilter(rows, filter)
     return (
     <div className={table}>
         <TableHeader headers={headers}/>

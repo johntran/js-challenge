@@ -9,6 +9,7 @@ export const initialState = {
         contacts: [],
         isFetching: false,
         didInvalidate: false,
+        filter: '',
     },
 };
 
@@ -31,18 +32,22 @@ export function receivedContacts(state, contacts) {
     return Object.assign({}, state, {contactsTable})
 }
 
+export function updateFilter(state, query) {
+    const contactsTable = Object.assign({}, state.contactsTable, {filter: query})
+    return Object.assign({}, state, {contactsTable})
+}
+
 export function addContact(state, contact) {
     const contacts = [...state.contactsTable.contacts, ...convertJsonToArray([contact])]
     const contactsTable = Object.assign({}, state.contactsTable, {contacts})
     return Object.assign({}, state, {contactsTable})
 }
 
-
-
 export default function contactsTable(state = initialState, action) {
     const actions = {
         'ADD_CONTACT': () => addContact(state, action.contact),
         'CONTACT_LIST_RECEIVED': () => receivedContacts(state, action.contacts),
+        'UPDATE_FILTER': () => updateFilter(state, action.query),
         'DEFAULT': () => state
     };
     return (actions[action.type] || actions['DEFAULT'])()

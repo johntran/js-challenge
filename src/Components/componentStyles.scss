@@ -28,6 +28,8 @@
 .tableCell {
   @extend .flex;
   flex-basis: 15%;
+  overflow: auto;
+  background-color: #FFF;
 }
 
 .tableHeader {
