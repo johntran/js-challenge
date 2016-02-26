@@ -3,7 +3,6 @@ import styles from './componentStyles.scss';
 
 export const AddButton = ({openModal}) => {
     const {addButtonContainer} = styles;
-    console.log(openModal)
     return(<div className={addButtonContainer}>
         <button
             onClick={openModal}

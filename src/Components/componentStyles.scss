@@ -10,6 +10,15 @@
   max-width: 150px;
 }
 
+.multilineInputFieldContainer {
+  @extend .flexColumn;
+  width: 80%;
+}
+
+.multilineInput{
+
+}
+
 //Table
 
 .table {
