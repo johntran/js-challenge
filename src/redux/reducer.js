@@ -1,3 +1,9 @@
+function convertJsonToArray(tableData) {
+    const headers = ['firstName', 'lastName', 'dob', 'phone', 'email', 'notes']
+    const rows = tableData.map(user => headers.map(header => user[header]))
+    return [...rows]
+}
+
 export const initialState = {
     contactsTable: {
         contacts: [],
@@ -15,9 +21,10 @@ export function requestContacts(state, contacts) {
     return Object.assign({}, state, {contactsTable})
 }
 
-export function receivedContacts(state) {
+export function receivedContacts(state, contacts) {
     const contactsTable = Object.assign({}, state.contactsTable,
         {
+            contacts: convertJsonToArray(contacts),
             isFetching: false,
             didInvalidate: false,
         })
@@ -25,7 +32,7 @@ export function receivedContacts(state) {
 }
 
 export function addContact(state, contact) {
-    const contacts = [...state.contactsTable.contacts, contact]
+    const contacts = [...state.contactsTable.contacts, ...convertJsonToArray([contact])]
     const contactsTable = Object.assign({}, state.contactsTable, {contacts})
     return Object.assign({}, state, {contactsTable})
 }

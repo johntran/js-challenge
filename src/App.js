@@ -17,10 +17,9 @@ import * as contactTableActions from './redux/actions';
 export class App extends Component {
     constructor(props) {
         super(props);
-        const tableData = this.convertJsontoArray(FakeDatabase)
         this.state = {
             headers: ['First Name', 'Last Name', 'Date of Birth', 'Phone Number', 'Email', 'Notes'],
-            rows: tableData.slice(1),
+            rows: [],
             openModal: false,
             contactCurrentlyEdited: {},
         };
@@ -28,19 +27,12 @@ export class App extends Component {
     }
 
     handleFormState(property, event) {
-        console.log(this.state)
         event.preventDefault()
         this.setState({
             contactCurrentlyEdited: Object.assign({},
                                     this.state.contactCurrentlyEdited,
                                     {[`${property}`]: event.target.value})
         })
-    }
-
-    convertJsontoArray(tableData) {
-        const headers = ['firstName', 'lastName', 'dob', 'phone', 'email', 'notes']
-        const rows = tableData.map(user => headers.map(header => user[header]))
-        return [headers, ...rows]
     }
 
   modalControl(action) {
@@ -52,12 +44,12 @@ export class App extends Component {
   }
 
     componentDidMount() {
-        this.props.actions.fetchContacts();
+        this.props.actions.fetchContacts().then(bee=> console.log(this.props));
     }
 
   render() {
-    const {headers, rows, openModal} = this.state;
-    //const {flexRow, flexColumn, fieldContainer, leftColumn, rightColumn, notesContainer} = componentStyles;
+      const {headers, openModal} = this.state;
+      const {contacts} = this.props.contactsTable
       return (
       <div>
         <Dialog
@@ -100,7 +92,7 @@ export class App extends Component {
         </div>
         <Table
           headers={headers}
-          rows={rows}
+          rows={contacts ? contacts : []}
         />
       </div>
     );
