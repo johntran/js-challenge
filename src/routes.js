@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, Link, IndexRoute } from 'react-router';
 import App from './App';
-import ContactsKeeperPageContainer from './Components/ContactsKeeperPage';
+import ContactsKeeperPageContainer from './Pages/ContactsKeeperPage';
 
 export default (store, history) => {
 

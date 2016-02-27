@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import styles from './componentStyles.scss';
+import {tableHeader, tableCellHeader, headerText} from './../componentStyles.scss';
 
 export const TableHeader = ({headers}) => {
-const {tableHeader, tableCell} = styles;
    return(
     <div className={tableHeader}>
         {headers.map(header => (
-            <div className={tableCell}
+            <div className={tableCellHeader}
                 key={header}>
-                {header}
+                <span className={headerText}>{header}</span>
             </div>
         ))}
     </div>)

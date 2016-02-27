@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import TableHeader from './TableHeader.component';
-import TableRow from './TableRow.component';
-import styles from './componentStyles.scss';
+import TableHeader from './TableHeader.component.js';
+import TableRow from './TableRow.component.js';
+import styles from './../componentStyles.scss';
 
 function applyFilter(rows, query) {
     const filteredRows = rows.filter((row, index) => {
@@ -12,7 +12,7 @@ function applyFilter(rows, query) {
 
 export const Table = ({headers, rows, filter}) => {
     const {table} = styles;
-    if(filter) rows = applyFilter(rows, filter)
+    //if(filter) rows = applyFilter(rows, filter)
     return (
     <div className={table}>
         <TableHeader headers={headers}/>

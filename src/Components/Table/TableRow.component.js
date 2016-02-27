@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import styles from './componentStyles.scss';
+import {tableCellRow, rowText, tableRow} from './../componentStyles.scss';
 
 const TableCell = ({key, cell}) => {
-    const {tableCell} = styles;
     return(
        <div key={key}
-            className={tableCell}>
-           {cell}
+            className={tableCellRow}>
+           <span className={rowText}>{cell}</span>
        </div>
    )
 }
 
 export const TableRow = ({key, row}) => {
-    const {tableRow} = styles;
     return(
         <div key={key}
              className={tableRow}>

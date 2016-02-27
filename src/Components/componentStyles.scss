@@ -1,5 +1,5 @@
 @import "flex",
-"modal";
+"Modal/modal";
 
 .addButtonContainer {
   margin: 0 0 0 auto;
@@ -32,6 +32,29 @@
   background-color: #FFF;
 }
 
+.tableCellHeader {
+  @extend .tableCell;
+  background-color: #676767;
+  color: #fff;
+  padding: 10px 0;
+  border: 1px solid #fff;
+}
+
+.headerText {
+  margin: auto 0 auto 10px;
+
+}
+
+.tableCellRow {
+  @extend .tableCell;
+  padding: 5px 0;
+  border: 1px solid #E7E7E7;
+}
+
+.rowText {
+  @extend .headerText;
+}
+
 .tableHeader {
   @extend .flexRow;
 }
@@ -40,3 +63,19 @@
   @extend .tableHeader;
 }
 
+// ContactsKeeperHeader style
+
+.contactsKeeperHeaderContainer {
+  margin: 0 0 50px 0;
+}
+
+.orangeBox {
+  background-color: #F58833;
+  padding: 25px 0 15px 30px;
+  color: #fff;
+}
+
+.greyBox {
+  height: 20px;
+  background-color: #E7E7E7;
+}

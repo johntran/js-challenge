@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { RouteHandler } from 'react-router';
+import {ContactsKeeperHeader} from './Components/ContactsKeeperHeader.component'
 
 export default class App extends Component {
     constructor() {
@@ -10,6 +11,7 @@ export default class App extends Component {
     render() {
         return (
             <div className={'hi'}>
+                <ContactsKeeperHeader/>
                 <div>{this.props.children}</div>
             </div>
         );

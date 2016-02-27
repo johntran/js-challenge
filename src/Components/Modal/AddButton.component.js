@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './componentStyles.scss';
+import styles from './../componentStyles.scss';
 
 export const AddButton = ({openModal}) => {
     const {addButtonContainer} = styles;

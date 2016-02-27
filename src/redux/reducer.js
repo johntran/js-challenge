@@ -6,7 +6,8 @@ function convertJsonToArray(tableData) {
 
 export const initialState = {
     contactsTable: {
-        contacts: [],
+        allContacts: [],
+        filteredContacts: [],
         isFetching: false,
         didInvalidate: false,
         filter: '',
@@ -25,7 +26,8 @@ export function requestContacts(state, contacts) {
 export function receivedContacts(state, contacts) {
     const contactsTable = Object.assign({}, state.contactsTable,
         {
-            contacts: convertJsonToArray(contacts),
+            allContacts: convertJsonToArray(contacts),
+            filteredContacts: convertJsonToArray(contacts),
             isFetching: false,
             didInvalidate: false,
         })
@@ -33,11 +35,17 @@ export function receivedContacts(state, contacts) {
 }
 
 export function updateFilter(state, query) {
-    const contactsTable = Object.assign({}, state.contactsTable, {filter: query})
+    if(query === '') {
+        const contactsTable = Object.assign({}, state.contactsTable, {filter: query, filteredContacts: allContacts})
+        return Object.assign({}, state, {contactsTable})
+    }
+    const filteredContacts = allContacts.filter(contact => contact.some(contactField => contactField.includes(query)))
+    const contactsTable = Object.assign({}, state.contactsTable, {filter: query, filteredContacts})
     return Object.assign({}, state, {contactsTable})
 }
 
 export function addContact(state, contact) {
+    console.log('onctact', contact)
     const contacts = [...state.contactsTable.contacts, ...convertJsonToArray([contact])]
     const contactsTable = Object.assign({}, state.contactsTable, {contacts})
     return Object.assign({}, state, {contactsTable})

@@ -1,0 +1,42 @@
+@import "../flex";
+
+.fieldContainer {
+  @extend .flexRow;
+}
+
+.modalColumn {
+  @extend .flexColumn;
+  flex-basis: 40%;
+}
+
+.leftColumn {
+  @extend .modalColumn;
+}
+
+.rightColumn {
+  @extend .modalColumn;
+}
+
+.modalHeaderContainer {
+  @extend .flexRow;
+  background-color: #216FB5;
+  color: #FFF;
+  padding: 10px;
+}
+
+.buttonContainer {
+  margin: 0 0 0 auto;
+}
+
+.button {
+  background-color: #FFF;
+  border-radius: 35px;
+  border: 0;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.notesContainer {
+
+}
