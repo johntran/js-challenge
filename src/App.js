@@ -27,3 +27,20 @@ App.contextTypes = {
     location: React.PropTypes.object,
     history: React.PropTypes.object
 };
+
+//export const initialState = {
+//    contactsTable: {
+//        allContacts: [],
+//        filteredContacts: [],
+//        isFetching: false,
+//        didInvalidate: false,
+//        filter: '',
+//        filterQuery: '',
+//        modalIsOpen: false,
+//        contactCurrentlyEdited: {},
+//        columnSort: {
+//            columnIndex: null,
+//            direction: null,
+//        }
+//    },
+//};

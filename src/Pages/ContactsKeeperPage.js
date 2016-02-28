@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import Table from './../Components/Table/Table.component.js';
-//import FakeDatabase from './FakeDatabase';
-import ContactFilterInput from './../Components/ContactFilterInput/ContactFilterInput.component.js';
-import AddButton from './../Components/Modal/AddButton.component.js';
-import { flexRow, flexColumn, fieldContainer, leftColumn, rightColumn, notesContainer } from './../Components/componentStyles.scss';
-import Dialog from '../../node_modules/material-ui/lib/dialog';
-import FieldInput from './../Components/FieldInput.component.js';
-import ModalHeader from './../Components/Modal/ModalHeader.component.js';
-import {contactsKeeperPage} from './ContactsKeeperPage.scss';
-import ContactsKeeperModal from '../Components/ContactsKeeperModal.component'
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 import * as contactTableActions from '../redux/actions';
-import Modal from './../Components/Modal/Modal.component'
+
+import Table from './../Components/Table/Table.component.js';
+import ContactFilterInput from './../Components/ContactFilterInput/ContactFilterInput.component.js';
+import AddButton from './../Components/Modal/AddButton.component.js';
+import ContactsKeeperModal from '../Components/ContactsKeeperModal.component'
+
+import { flexRow } from './../Components/componentStyles.scss';
+import {contactsKeeperPage} from './ContactsKeeperPage.scss';
 
 export class ContactsKeeperPage extends Component {
     constructor(props) {
@@ -25,7 +22,7 @@ export class ContactsKeeperPage extends Component {
 
     render() {
         const {modalIsOpen, filteredContacts} = this.props.contactsTable
-        const {addContact, updateFilterQuery, updateForm, filterTable, openModal, closeModal} = this.props.actions
+        const {addContact, updateFilterQuery, updateForm, filterTable, openModal, closeModal, sortTable} = this.props.actions
         return (
             <div className={contactsKeeperPage}>
                 <ContactsKeeperModal
@@ -47,7 +44,7 @@ export class ContactsKeeperPage extends Component {
                 <Table
                     headers={['First Name', 'Last Name', 'Date of Birth', 'Phone Number', 'Email', 'Notes']}
                     rows={filteredContacts ? filteredContacts : []}
-                    filter={''}
+                    sortTable={sortTable}
                 />
             </div>
         );

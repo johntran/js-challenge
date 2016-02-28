@@ -1,10 +1,7 @@
 import React from 'react';
-import Dialog from '../../node_modules/material-ui/lib/dialog';
-import ModalHeader from './Modal/ModalHeader.component.js';
-import {fieldContainer, leftColumn, rightColumn } from './componentStyles.scss';
 import FieldInput from './FieldInput.component';
 import Modal from './Modal/Modal.component'
-//const handleFormState = () => console.log('hi')
+import {fieldContainer, leftColumn, rightColumn } from './componentStyles.scss';
 export const ContactsKeeperModal = ({isOpen, close, handleFormState, addContact}) => (
     <Modal
         close={close}

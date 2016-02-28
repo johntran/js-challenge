@@ -59,6 +59,14 @@ export function updateForm(property, event) {
     }
 }
 
+export const SORT_TABLE = 'SORT_TABLE';
+export function sortTable(columnIndex) {
+    return {
+        type: SORT_TABLE,
+        columnIndex
+    }
+}
+
 export function fetchContacts() {
     return dispatch => {
         dispatch(requestContacts);

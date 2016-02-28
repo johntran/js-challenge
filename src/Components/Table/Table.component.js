@@ -10,12 +10,14 @@ function applyFilter(rows, query) {
     return filteredRows
 }
 
-export const Table = ({headers, rows, filter}) => {
+export const Table = ({headers, rows, sortTable}) => {
     const {table} = styles;
     //if(filter) rows = applyFilter(rows, filter)
     return (
     <div className={table}>
-        <TableHeader headers={headers}/>
+        <TableHeader
+            headers={headers}
+            sortTable={sortTable}/>
         {rows.map((row, index) => <TableRow key={index} row={row}/>)}
     </div>)
 }
