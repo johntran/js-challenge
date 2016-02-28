@@ -17,29 +17,6 @@ import Modal from './../Components/Modal/Modal.component'
 export class ContactsKeeperPage extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            headers: ['First Name', 'Last Name', 'Date of Birth', 'Phone Number', 'Email', 'Notes'],
-            rows: [],
-            openModal: false,
-            contactCurrentlyEdited: {},
-        };
-        console.log('props', props)
-    }
-
-    handleFormState(property, event) {
-        this.setState({
-            contactCurrentlyEdited: Object.assign({},
-                this.state.contactCurrentlyEdited,
-                {[`${property}`]: event.target.value})
-        })
-    }
-
-    modalControl(action) {
-        const modalActions = {
-            open: () => this.setState({openModal: true}),
-            close: () => this.setState({openModal: false}),
-        }
-        return modalActions[action]
     }
 
     componentDidMount() {
@@ -47,16 +24,15 @@ export class ContactsKeeperPage extends Component {
     }
 
     render() {
-        const {headers, openModal} = this.state;
-        const {filteredContacts} = this.props.contactsTable
-        const {addContact, updateFilterQuery, filterTable} = this.props.actions
+        const {modalIsOpen, filteredContacts} = this.props.contactsTable
+        const {addContact, updateFilterQuery, updateForm, filterTable, openModal, closeModal} = this.props.actions
         return (
             <div className={contactsKeeperPage}>
                 <ContactsKeeperModal
-                    isOpen={openModal}
-                    close={this.modalControl('close')}
-                    handleFormState={this.handleFormState.bind(this)}
-                    addContact={()=>addContact(this.state.contactCurrentlyEdited)}
+                    isOpen={modalIsOpen}
+                    close={closeModal}
+                    handleFormState={updateForm}
+                    addContact={addContact}
                 />
 
                 <div className={flexRow}>
@@ -65,11 +41,11 @@ export class ContactsKeeperPage extends Component {
                         filterTable={filterTable}
                     />
                     <AddButton
-                        openModal={this.modalControl('open')}
+                        openModal={openModal}
                     />
                 </div>
                 <Table
-                    headers={headers}
+                    headers={['First Name', 'Last Name', 'Date of Birth', 'Phone Number', 'Email', 'Notes']}
                     rows={filteredContacts ? filteredContacts : []}
                     filter={''}
                 />
@@ -94,13 +70,4 @@ export const ContactsKeeperPageContainer = connect(
 )(ContactsKeeperPage);
 
 export default ContactsKeeperPageContainer;
-
-
-//<ContactsKeeperModal
-//    open={openModal}
-//    onRequestClose={this.modalControl('close')}
-//    handleFormState={this.handleFormState.bind(this)}
-//    addContact={()=>addContact(this.state.contactCurrentlyEdited)}
-///>
-//
 

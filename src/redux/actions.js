@@ -1,10 +1,9 @@
 import FakeDatabase from '../FakeDatabase'
 
 export const ADD_CONTACT = 'ADD_CONTACT';
-export function addContact(contact) {
+export function addContact() {
     return {
         type: ADD_CONTACT,
-        contact
     }
 }
 export const CONTACT_LIST_REQUEST = 'CONTACT_LIST_REQUEST';
@@ -34,6 +33,29 @@ export function updateFilterQuery(query) {
     return {
         type: UPDATE_FILTER_QUERY,
         query
+    }
+}
+
+export const OPEN_MODAL = 'OPEN_MODAL';
+export function openModal() {
+    return {
+        type: OPEN_MODAL
+    }
+}
+
+export const CLOSE_MODAL = 'CLOSE_MODAL';
+export function closeModal() {
+    return {
+        type: CLOSE_MODAL
+    }
+}
+
+export const UPDATE_FORM = 'UPDATE_FORM';
+export function updateForm(property, event) {
+    return {
+        type: UPDATE_FORM,
+        property,
+        event,
     }
 }
 

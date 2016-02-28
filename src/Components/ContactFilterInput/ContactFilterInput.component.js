@@ -9,7 +9,7 @@ export const ContactFilterInput = ({filterTable, updateFilterQuery}) => {
         <input
             className={searchBar}
             onChange={updateFilterQuery}
-            placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Search"/>
+            placeholder="Search"/>
         <button type="button"
                 className={searchIcon}
                 onClick={filterTable}
