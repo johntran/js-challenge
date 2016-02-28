@@ -1,10 +1,3 @@
-@import "../scss/flex",
-"Modal/modal";
-
-.addButtonContainer {
-  margin: 0 0 0 auto;
-}
-
 .inputFieldContainer {
   @extend .flexColumn;
   max-width: 194px;
@@ -16,10 +9,6 @@
   margin:3px 0;
   padding:5px;
   border: 1px solid #888888;
-}
-
-.headerArrows {
-  margin: auto 10px;
 }
 
 .multilineInputFieldContainer {
@@ -35,26 +24,3 @@
   border: 1px solid #888888;
   resize: none;
 }
-
-.addButton {
-  background-color: #216FB5;
-  display: flex;
-  flex-direction: row;
-  border: 0;
-  padding:10px;
-  color: #fff;
-  border-radius:3px;
-}
-
-.addButtonText {
-  margin: auto 10px;
-  font-family: 'Open Sans';
-  font-weight: 200;
-}
-
-.multilineInput{
-
-}
-
-
-

@@ -1,5 +1,5 @@
 import React from 'react';
-import {headerArrows} from '../componentStyles.scss';
+import {headerArrows} from './TableHeader.scss';
 
 export const DownArrowIcon = (props) => (
     <div className={headerArrows}>

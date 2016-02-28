@@ -1,0 +1,19 @@
+.addButtonContainer {
+  margin: 0 0 0 auto;
+}
+
+.addButton {
+  background-color: #216FB5;
+  display: flex;
+  flex-direction: row;
+  border: 0;
+  padding:10px;
+  color: #fff;
+  border-radius:3px;
+}
+
+.addButtonText {
+  margin: auto 10px;
+  font-family: 'Open Sans';
+  font-weight: 200;
+}

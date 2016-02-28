@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {inputFieldContainer, multilineInputFieldContainer, multilineInput, inputField} from './../componentStyles.scss';
+import {inputFieldContainer, multilineInputFieldContainer, multilineInput, inputField} from './FieldInput.scss';
 
 export const FieldInput = ({title, multiline, onChange}) => {
     if (multiline) return (

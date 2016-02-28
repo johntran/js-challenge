@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import styles from './../componentStyles.scss';
+import {addButtonContainer, addButtonText, addButton}from './AddButton.scss';
 import AddIcon from './AddIcon.component'
 
 export const AddButton = ({openModal}) => {
-    const {addButtonContainer, addButtonText, addButton} = styles;
     return(<div className={addButtonContainer}>
         <button
             onClick={openModal}

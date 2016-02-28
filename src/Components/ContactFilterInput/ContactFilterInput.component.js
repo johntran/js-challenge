@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import styles from './../componentStyles.scss';
+import {flexRow} from '../../scss/_flex.scss';
 import SearchIcon from './searchIcon.component';
 import { searchIcon, searchBar } from './ContactFilterInput.scss'
 
 export const ContactFilterInput = ({filterTable, updateFilterQuery}) => {
-    const {flexRow} = styles;
     return(<div className={flexRow}>
         <input
             className={searchBar}

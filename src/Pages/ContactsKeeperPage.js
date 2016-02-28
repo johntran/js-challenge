@@ -9,7 +9,7 @@ import AddButton from './../Components/Modal/AddButton.component.js';
 import ContactFilterInput from './../Components/ContactFilterInput/ContactFilterInput.component.js';
 import ContactsKeeperModal from './Components/ContactsKeeperModal.component.js'
 
-import { flexRow } from './../Components/componentStyles.scss';
+import { flexRow } from '../scss/_flex.scss';
 import {contactsKeeperPage} from './ContactsKeeperPage.scss';
 
 export class ContactsKeeperPage extends Component {
