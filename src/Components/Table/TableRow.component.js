@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {tableCellRow, rowText, tableRow} from './../componentStyles.scss';
+import {tableCellRow, rowText, tableRow, notesRowCell} from './../componentStyles.scss';
 
-const TableCell = ({key, cell}) => {
+const TableCell = ({key, cell, index}) => {
     return(
        <div key={key}
-            className={tableCellRow}>
+            className={index === 5 ? notesRowCell : tableCellRow}>
            <span className={rowText}>{cell}</span>
        </div>
    )
@@ -15,7 +15,7 @@ export const TableRow = ({key, row}) => {
         <div key={key}
              className={tableRow}>
             {row.map((cell, index) =>
-                <TableCell key={index} cell={cell}/>
+                <TableCell key={index} index={index} cell={cell}/>
             )}
         </div>
     )

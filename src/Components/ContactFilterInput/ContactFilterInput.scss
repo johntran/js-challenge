@@ -1,4 +1,20 @@
 .searchIcon {
   background-color: #216FB5;
   border: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  width: 50px;
 }
+.searchBar {
+  //border-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border: 1px solid #676767;
+  border-right: 0;
+  width: 190px;
+  input::-webkit-input-placeholder {
+    margin: 0 0 0 10px;
+    padding:20px;
+  }
+}
+
