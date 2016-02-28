@@ -1,12 +1,24 @@
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import React, { Component } from 'react';
+import React from 'react';
+import {modal, modalBackground} from './modal.scss'
+import ModalHeader from './ModalHeader.component'
 
-export const Modal = ({row}) => {
-    const {tableRow} = styles;
+export const Modal = ({children, isOpen, close}) => {
+
     return(
-        <div key={key}
-             className={tableRow}>
-
+        <div>
+        {isOpen ?
+                <div className={modalBackground}>
+                    <div className={modal}
+                    onClick={null}>
+                        <ModalHeader
+                        close={close}
+                        />
+                        {children}
+                    </div>
+                </div>
+            :
+            null
+        }
         </div>
     )
 }

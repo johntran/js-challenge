@@ -3,14 +3,12 @@ import Dialog from '../../node_modules/material-ui/lib/dialog';
 import ModalHeader from './Modal/ModalHeader.component.js';
 import {fieldContainer, leftColumn, rightColumn } from './componentStyles.scss';
 import FieldInput from './FieldInput.component';
-
+import Modal from './Modal/Modal.component'
 //const handleFormState = () => console.log('hi')
-export const ContactsKeeperModal = ({open, onRequestClose, handleFormState, addContact}) => (
-    <Dialog
-        modal={false}
-        open={open}
-        onRequestClose={onRequestClose}>
-        <ModalHeader close={onRequestClose} />
+export const ContactsKeeperModal = ({isOpen, close, handleFormState, addContact}) => (
+    <Modal
+        close={close}
+        isOpen={isOpen}>
         <div className={fieldContainer}>
             <div className={leftColumn}>
                 <FieldInput title={'First Name'}
@@ -37,7 +35,7 @@ export const ContactsKeeperModal = ({open, onRequestClose, handleFormState, addC
         <button onClick={addContact}>
             Save
         </button>
-    </Dialog>
+    </Modal>
 )
 
 export default ContactsKeeperModal;

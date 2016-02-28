@@ -22,10 +22,17 @@ export function receivedContacts(contacts) {
     }
 }
 
-export const UPDATE_FILTER = 'UPDATE_FILTER';
-export function updateFilter(query) {
+export const FILTER_TABLE = 'FILTER_TABLE';
+export function filterTable() {
     return {
-        type: UPDATE_FILTER,
+        type: FILTER_TABLE,
+    }
+}
+
+export const UPDATE_FILTER_QUERY = 'UPDATE_FILTER_QUERY';
+export function updateFilterQuery(query) {
+    return {
+        type: UPDATE_FILTER_QUERY,
         query
     }
 }
