@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {tableCellRow, rowText, tableRow, notesRowCell} from './../componentStyles.scss';
+import {tableCellRow, rowText, tableRow, notesRowCell} from './TableRow.scss';
 
 const TableCell = ({key, cell, index}) => {
     return(

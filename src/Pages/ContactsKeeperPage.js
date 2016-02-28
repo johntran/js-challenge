@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import * as contactTableActions from '../redux/actions';
 
 import Table from './../Components/Table/Table.component.js';
-import ContactFilterInput from './../Components/ContactFilterInput/ContactFilterInput.component.js';
 import AddButton from './../Components/Modal/AddButton.component.js';
-import ContactsKeeperModal from '../Components/ContactsKeeperModal.component'
+
+import ContactFilterInput from './../Components/ContactFilterInput/ContactFilterInput.component.js';
+import ContactsKeeperModal from './Components/ContactsKeeperModal.component.js'
 
 import { flexRow } from './../Components/componentStyles.scss';
 import {contactsKeeperPage} from './ContactsKeeperPage.scss';
@@ -21,7 +22,7 @@ export class ContactsKeeperPage extends Component {
     }
 
     render() {
-        const {modalIsOpen, filteredContacts} = this.props.contactsTable
+        const {modalIsOpen, filteredContacts, columnSort} = this.props.contactsTable
         const {addContact, updateFilterQuery, updateForm, filterTable, openModal, closeModal, sortTable} = this.props.actions
         return (
             <div className={contactsKeeperPage}>
@@ -45,6 +46,7 @@ export class ContactsKeeperPage extends Component {
                     headers={['First Name', 'Last Name', 'Date of Birth', 'Phone Number', 'Email', 'Notes']}
                     rows={filteredContacts ? filteredContacts : []}
                     sortTable={sortTable}
+                    columnSort={columnSort}
                 />
             </div>
         );

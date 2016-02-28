@@ -122,7 +122,12 @@ export function updateForm(state, property, event) {
 
 export function sortTable(state, columnIndex) {
     const {filteredContacts, columnSort} = state.contactsTable;
-    const direction = columnSort.direction === 'ascending' ? 'descending' : 'ascending';
+    let direction = columnSort.direction ? columnSort.direction : 'ascending';
+    if (columnIndex === columnSort.columnIndex) {
+        direction = columnSort.direction === 'ascending' ? 'descending' : 'ascending';
+    } else {
+        direction = 'ascending';
+    }
     const sortedFilteredContacts = applySortToContacts(columnIndex, direction, filteredContacts)
     const contactsTable = Object.assign({}, state.contactsTable, {
         filteredContacts: sortedFilteredContacts,
@@ -135,7 +140,10 @@ export function sortTable(state, columnIndex) {
 }
 
 export function closeModal(state) {
-    const contactsTable = Object.assign({}, state.contactsTable, {modalIsOpen: false})
+    const contactsTable = Object.assign({}, state.contactsTable, {
+        modalIsOpen: false,
+        contactCurrentlyEdited: {}
+    })
     return Object.assign({}, state, {contactsTable})
 }
 

@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 import TableHeader from './TableHeader.component.js';
 import TableRow from './TableRow.component.js';
-import styles from './../componentStyles.scss';
+import {table} from './Table.scss';
 
-function applyFilter(rows, query) {
-    const filteredRows = rows.filter((row, index) => {
-        return row.some(cell => cell.includes(query))
-    })
-    return filteredRows
-}
-
-export const Table = ({headers, rows, sortTable}) => {
-    const {table} = styles;
+export const Table = ({headers, rows, sortTable, columnSort}) => {
     //if(filter) rows = applyFilter(rows, filter)
     return (
     <div className={table}>
         <TableHeader
             headers={headers}
-            sortTable={sortTable}/>
+            sortTable={sortTable}
+            columnSort={columnSort}
+        />
         {rows.map((row, index) => <TableRow key={index} row={row}/>)}
     </div>)
 }

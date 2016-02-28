@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { RouteHandler } from 'react-router';
-import {ContactsKeeperHeader} from './Components/ContactsKeeperHeader.component'
-
+import ContactsKeeperHeader from './Pages/Components/ContactsKeeperHeader.component.js'
+import ContactsKeeperFooter from './Pages/Components/ContactsKeeperFooter.component.js'
+import {fullHeight, appContainer} from './App.scss'
 export default class App extends Component {
     constructor() {
         super();
@@ -10,9 +11,10 @@ export default class App extends Component {
 
     render() {
         return (
-            <div className={'hi'}>
+            <div className={fullHeight}>
                 <ContactsKeeperHeader/>
                 <div>{this.props.children}</div>
+                <ContactsKeeperFooter/>
             </div>
         );
     }
@@ -27,20 +29,3 @@ App.contextTypes = {
     location: React.PropTypes.object,
     history: React.PropTypes.object
 };
-
-//export const initialState = {
-//    contactsTable: {
-//        allContacts: [],
-//        filteredContacts: [],
-//        isFetching: false,
-//        didInvalidate: false,
-//        filter: '',
-//        filterQuery: '',
-//        modalIsOpen: false,
-//        contactCurrentlyEdited: {},
-//        columnSort: {
-//            columnIndex: null,
-//            direction: null,
-//        }
-//    },
-//};

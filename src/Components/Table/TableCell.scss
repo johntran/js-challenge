@@ -1,0 +1,25 @@
+.tableCell {
+  @extend .flex;
+  flex-basis: 15%;
+  overflow: auto;
+  background-color: #FFF;
+  font-size: 11px;
+  letter-spacing:1px;
+}
+
+.tableCellRow {
+  @extend .tableCell;
+  padding: 5px 0;
+  border-right: 1px solid #E7E7E7;
+  border-top: 1px solid #E7E7E7;
+}
+
+.notesRowCell {
+  @extend .tableCellRow;
+  flex-basis: 25%;
+  border-right: 0;
+}
+
+.rowText {
+  @extend .headerText;
+}

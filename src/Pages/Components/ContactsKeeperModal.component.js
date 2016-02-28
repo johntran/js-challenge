@@ -1,11 +1,12 @@
 import React from 'react';
-import FieldInput from './FieldInput.component';
-import Modal from './Modal/Modal.component'
-import {fieldContainer, leftColumn, rightColumn } from './componentStyles.scss';
+import FieldInput from './../../Components/FieldInput/FieldInput.component.js';
+import Modal from './../../Components/Modal/Modal.component.js'
+import {fieldContainer, leftColumn, rightColumn, modalContainer, separation, saveButton, saveButtonContainer} from './ContactsKeeperModal.scss';
 export const ContactsKeeperModal = ({isOpen, close, handleFormState, addContact}) => (
     <Modal
         close={close}
         isOpen={isOpen}>
+        <div className={modalContainer}>
         <div className={fieldContainer}>
             <div className={leftColumn}>
                 <FieldInput title={'First Name'}
@@ -28,10 +29,15 @@ export const ContactsKeeperModal = ({isOpen, close, handleFormState, addContact}
                         multiline={true}
                         onChange={event => handleFormState('notes', event)}/>
         </div>
+        </div>
 
-        <button onClick={addContact}>
+        <hr className={separation}/>
+        <div className={saveButtonContainer}>
+        <button className={saveButton}
+            onClick={addContact}>
             Save
         </button>
+            </div>
     </Modal>
 )
 

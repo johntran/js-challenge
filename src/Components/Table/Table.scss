@@ -1,0 +1,8 @@
+@import "../../scss/flex";
+
+.table {
+  @extend .flexColumn;
+  border: 1px solid #676767;
+  margin: 20px 0;
+  border-radius: 3px;
+}

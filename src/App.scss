@@ -1,0 +1,10 @@
+.fullHeight {
+  height: 100%;
+  margin:0 auto;
+}
+
+.appContainer {
+  @extend .fullHeight;
+  width:80%;
+  margin:0 auto;
+}

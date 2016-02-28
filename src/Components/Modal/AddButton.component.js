@@ -8,8 +8,7 @@ export const AddButton = ({openModal}) => {
         <button
             onClick={openModal}
             type="button"
-            className={addButton}
-        >
+            className={addButton}>
             <AddIcon/>
             <span className={addButtonText}>Contacts Keeper</span>
         </button>

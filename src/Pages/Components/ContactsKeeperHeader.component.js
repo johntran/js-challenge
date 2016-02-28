@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {contactsKeeperHeaderContainer, greyBox, orangeBox} from './componentStyles.scss';
+import {contactsKeeperHeaderContainer, greyBox, orangeBox} from './ContactsKeeperHeader.scss';
 
 export const ContactsKeeperHeader = ({close}) => {
     return(

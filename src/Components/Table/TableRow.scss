@@ -1,0 +1,29 @@
+@import "../../scss/flex",
+"TableCell"
+;
+
+.tableHeader {
+  @extend .flexRow;
+}
+
+.tableHeaderCell {
+  @extend .tableCell;
+  background-color: #676767;
+  color: #fff;
+  padding: 10px 0;
+  border-right: 1px solid #fff;
+}
+
+.notesHeaderCell {
+  @extend .tableHeaderCell;
+  flex-basis: 25%;
+  border-right: 0;
+}
+
+.headerText {
+  margin: auto 0 auto 10px;
+}
+
+.tableRow {
+  @extend .tableHeader;
+}
