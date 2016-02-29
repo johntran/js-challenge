@@ -1,5 +1,5 @@
 import React from 'react';
-import {addIconContainer} from './modal.scss';
+import {addIconContainer} from './../Modal/modal.scss';
 
 export const AddIcon = (props) => (
     <div className={addIconContainer}>

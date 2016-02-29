@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {addButtonContainer, addButtonText, addButton}from './AddButton.scss';
-import AddIcon from './AddIcon.component'
+import AddIcon from './AddIcon.component.js'
 
 export const AddButton = ({openModal}) => {
     return(<div className={addButtonContainer}>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as contactTableActions from '../../redux/actions';
 
 import Table from './../../Components/Table/Table.component.js';
-import AddButton from './../../Components/Modal/AddButton.component.js';
+import AddButton from './../../Components/AddContactButton/AddButton.component.js';
 
 import ContactFilterInput from './../../Components/ContactFilterInput/ContactFilterInput.component.js';
 import ContactsKeeperModal from './Components/ContactsKeeperModal.component.js'
