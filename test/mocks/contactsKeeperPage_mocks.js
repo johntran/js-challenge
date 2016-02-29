@@ -11,6 +11,7 @@ export const nullState = {
     columnSort: { columnIndex: null, direction: null }
     }
 }
+
 export const arrayDatabase = [ [ 'Frodo',
     'Baggins',
     '09/22/2011',
@@ -28,7 +29,16 @@ export const arrayDatabase = [ [ 'Frodo',
         '12/20/1999',
         '7146228644',
         'aragorn@dundain.com',
-        'Do not give him the ring' ] ]
+        'Do not give him the ring' ] ];
+
+export const filledOutContactsTable = Object.assign({},
+    nullState.contactsTable,
+    {
+        allContacts: arrayDatabase,
+        filteredContacts: arrayDatabase
+    })
+export const filledOutState = {contactsTable: filledOutContactsTable}
+
 export const formUpdate = {
     firstName: 'Pippin',
     lastName: 'Took',

@@ -5,6 +5,7 @@ import AddIcon from './AddIcon.component'
 export const AddButton = ({openModal}) => {
     return(<div className={addButtonContainer}>
         <button
+            id="AddButton"
             onClick={openModal}
             type="button"
             className={addButton}>

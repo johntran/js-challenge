@@ -10,7 +10,7 @@ export const ContactsKeeperModal = ({isOpen, close, handleFormState, addContact}
     <Modal
         close={close}
         isOpen={isOpen}>
-        <div className={modalContainer}>
+        <div className={modalContainer} id="modalContainer">
         <div className={fieldContainer}>
             <div className={leftColumn}>
                 {leftColumnFields.map(field =>

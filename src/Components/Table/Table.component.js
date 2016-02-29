@@ -3,9 +3,7 @@ import TableHeader from './TableHeader.component.js';
 import TableRow from './TableRow.component.js';
 import {table} from './Table.scss';
 
-export const Table = ({headers, rows, sortTable, columnSort}) => {
-    //if(filter) rows = applyFilter(rows, filter)
-    return (
+export const Table = ({headers, rows, sortTable, columnSort}) => (
     <div className={table}>
         <TableHeader
             headers={headers}
@@ -13,7 +11,7 @@ export const Table = ({headers, rows, sortTable, columnSort}) => {
             columnSort={columnSort}
         />
         {rows.map((row, index) => <TableRow key={index} row={row}/>)}
-    </div>)
-}
+    </div>
+)
 
 export default Table
