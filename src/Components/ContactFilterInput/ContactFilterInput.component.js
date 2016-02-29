@@ -7,7 +7,7 @@ export const ContactFilterInput = ({filterTable, updateFilterQuery}) => {
     return(<div className={flexRow}>
         <input
             className={searchBar}
-            onChange={updateFilterQuery}
+            onChange={(event)=>updateFilterQuery(event.target.value)}
             placeholder="Search"/>
         <button type="button"
                 className={searchIcon}

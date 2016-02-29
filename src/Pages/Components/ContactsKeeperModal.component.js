@@ -2,6 +2,10 @@ import React from 'react';
 import FieldInput from './../../Components/FieldInput/FieldInput.component.js';
 import Modal from './../../Components/Modal/Modal.component.js'
 import {fieldContainer, leftColumn, rightColumn, modalContainer, separation, saveButton, saveButtonContainer} from './ContactsKeeperModal.scss';
+
+const leftColumnFields = [['First Name', 'firstName'], ['Date of Birth', 'dob'], ['Email', 'email']];
+const rightColumnFields = [['Last Name', 'lastName'], ['Phone', 'phone']];
+
 export const ContactsKeeperModal = ({isOpen, close, handleFormState, addContact}) => (
     <Modal
         close={close}
@@ -9,25 +13,27 @@ export const ContactsKeeperModal = ({isOpen, close, handleFormState, addContact}
         <div className={modalContainer}>
         <div className={fieldContainer}>
             <div className={leftColumn}>
-                <FieldInput title={'First Name'}
-                            onChange={event => handleFormState('firstName', event)}/>
-                <FieldInput title={'Date of Birth'}
-                            onChange={event => handleFormState('dob', event)}/>
-                <FieldInput title={'Email'}
-                            onChange={event => handleFormState('email', event)}/>
+                {leftColumnFields.map(field =>
+                    <FieldInput
+                        key={field[0]}
+                        title={field[0]}
+                        onChange={event => handleFormState(field[1], event.target.value)}/>)
+                }
             </div>
             <div className={rightColumn}>
-                <FieldInput title={'Last Name'}
-                            onChange={event => handleFormState('lastName', event)}/>
-                <FieldInput title={'Phone Number'}
-                            onChange={event => handleFormState('phone', event)}/>
+                {rightColumnFields.map(field =>
+                    <FieldInput
+                        key={field[0]}
+                        title={field[0]}
+                        onChange={event => handleFormState(field[1], event.target.value)}/>)
+                }
             </div>
         </div>
 
-        <div className={'h2'}>
+        <div>
             <FieldInput title={'Notes'}
                         multiline={true}
-                        onChange={event => handleFormState('notes', event)}/>
+                        onChange={event => handleFormState('notes', event.target.value)}/>
         </div>
         </div>
 

@@ -18,7 +18,7 @@ export class ContactsKeeperPage extends Component {
     }
 
     componentDidMount() {
-        this.props.actions.fetchContacts().then(bee=> console.log(this.props));
+        this.props.actions.fetchContacts();
     }
 
     render() {
@@ -43,7 +43,7 @@ export class ContactsKeeperPage extends Component {
                     />
                 </div>
                 <Table
-                    headers={['First Name', 'Last Name', 'Date of Birth', 'Phone Number', 'Email', 'Notes']}
+                    headers={['First Name', 'Last Name', 'Date of Birth', 'Phone', 'Email', 'Notes']}
                     rows={filteredContacts ? filteredContacts : []}
                     sortTable={sortTable}
                     columnSort={columnSort}

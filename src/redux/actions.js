@@ -51,11 +51,11 @@ export function closeModal() {
 }
 
 export const UPDATE_FORM = 'UPDATE_FORM';
-export function updateForm(property, event) {
+export function updateForm(property, value) {
     return {
         type: UPDATE_FORM,
         property,
-        event,
+        value,
     }
 }
 

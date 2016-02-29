@@ -1,17 +1,18 @@
 {
-  "name": "react-transform-boilerplate",
+  "name": "reactjstables",
   "version": "1.0.0",
-  "description": "A new Webpack boilerplate with hot reloading React components, and error handling on module and component level.",
+  "description": "John showing that he can program JS apps",
   "scripts": {
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "start": "node devServer.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "mocha --compilers js:babel-core/register --reporter spec 'test/' --recursive"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-transform-boilerplate.git"
+    "url": "https://github.com/johntran/js-challenge.git"
   },
   "keywords": [
     "react",
@@ -26,12 +27,9 @@
     "babel",
     "react-transform"
   ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "author": "John Tran (http://github.com/johntran)",
   "license": "CC0-1.0",
-  "bugs": {
-    "url": "https://github.com/gaearon/react-transform-boilerplate/issues"
-  },
-  "homepage": "https://github.com/gaearon/react-transform-boilerplate",
+  "homepage": "https://github.com/johntran/js-challenge",
   "devDependencies": {
     "babel-core": "^6.3.15",
     "babel-eslint": "^5.0.0-beta4",
@@ -58,13 +56,10 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
-    "material-ui": "^0.14.4",
-    "rc-animate": "^2.0.3",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.4.0",
     "react-router": "^2.0.0",
-    "react-tap-event-plugin": "^0.2.2",
     "redux": "^3.3.1",
     "redux-thunk": "^1.0.3"
   }

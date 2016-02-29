@@ -1,6 +1,6 @@
 function convertJsonToArray(tableData) {
     const headers = ['firstName', 'lastName', 'dob', 'phone', 'email', 'notes']
-    const rows = tableData.map(user => headers.map(header => user[header]))
+    const rows = tableData.map(user => headers.map(header => user[header] || ''))
     return [...rows]
 }
 
@@ -73,7 +73,7 @@ export function receivedContacts(state, contacts) {
 }
 
 export function updateFilterQuery(state, query) {
-    const contactsTable = Object.assign({}, state.contactsTable, {filterQuery: query.target.value})
+    const contactsTable = Object.assign({}, state.contactsTable, {filterQuery: query})
     return Object.assign({}, state, {contactsTable})
 }
 
@@ -95,13 +95,22 @@ export function filterTable(state) {
 export function addContact(state) {
     const {contactCurrentlyEdited, filterQuery} = state.contactsTable;
     const newContactRowArray = convertJsonToArray([contactCurrentlyEdited]);
-    const contacts = [...state.contactsTable.allContacts, ...newContactRowArray]
+    const allContacts = [...state.contactsTable.allContacts, ...newContactRowArray]
     if (contactPassesFilter(...newContactRowArray, filterQuery)) {
         const filteredContacts = [...state.contactsTable.filteredContacts, ...newContactRowArray]
-        const contactsTable = Object.assign({}, state.contactsTable, {contacts, filteredContacts})
+        const contactsTable = Object.assign({}, state.contactsTable, {
+            allContacts,
+            filteredContacts,
+            modalIsOpen: false,
+            contactCurrentlyEdited: {},
+        })
         return Object.assign({}, state, {contactsTable})
     }
-    const contactsTable = Object.assign({}, state.contactsTable, {contacts});
+    const contactsTable = Object.assign({}, state.contactsTable, {
+        allContacts,
+        contactCurrentlyEdited: {},
+        modalIsOpen: false,
+    });
     return Object.assign({}, state, {contactsTable})
 }
 
@@ -110,12 +119,12 @@ export function openModal(state) {
     return Object.assign({}, state, {contactsTable})
 }
 
-export function updateForm(state, property, event) {
+export function updateForm(state, property, value) {
     const {contactCurrentlyEdited} = state.contactsTable;
     const contactsTable = Object.assign({}, state.contactsTable, {
         contactCurrentlyEdited: Object.assign({},
             contactCurrentlyEdited,
-            {[`${property}`]: event.target.value})
+            {[`${property}`]: value})
     })
     return Object.assign({}, state, {contactsTable})
 }
@@ -155,9 +164,9 @@ export default function contactsTable(state = initialState, action) {
         'UPDATE_FILTER_QUERY': () => updateFilterQuery(state, action.query),
         'OPEN_MODAL': () => openModal(state),
         'CLOSE_MODAL': () => closeModal(state),
-        'UPDATE_FORM': () => updateForm(state, action.property, action.event),
+        'UPDATE_FORM': () => updateForm(state, action.property, action.value),
         'SORT_TABLE': () => sortTable(state, action.columnIndex),
         'DEFAULT': () => state,
     };
-    return (actions[action.type] || actions['DEFAULT'])()
+    return (action ? actions[action.type] || actions['DEFAULT'] : actions['DEFAULT'])()
 };
