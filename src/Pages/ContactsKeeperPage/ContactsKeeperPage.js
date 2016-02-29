@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-import * as contactTableActions from '../redux/actions';
+import * as contactTableActions from '../../redux/actions';
 
-import Table from './../Components/Table/Table.component.js';
-import AddButton from './../Components/Modal/AddButton.component.js';
+import Table from './../../Components/Table/Table.component.js';
+import AddButton from './../../Components/Modal/AddButton.component.js';
 
-import ContactFilterInput from './../Components/ContactFilterInput/ContactFilterInput.component.js';
+import ContactFilterInput from './../../Components/ContactFilterInput/ContactFilterInput.component.js';
 import ContactsKeeperModal from './Components/ContactsKeeperModal.component.js'
 
-import { flexRow } from '../scss/_flex.scss';
+import { flexRow } from '../../scss/_flex.scss';
 import {contactsKeeperPage} from './ContactsKeeperPage.scss';
 
 export class ContactsKeeperPage extends Component {

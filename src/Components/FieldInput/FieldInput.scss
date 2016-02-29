@@ -1,4 +1,5 @@
-@import '../../scss/flex';
+@import '../../scss/flex',
+"../../scss/colors";
 
 .inputFieldContainer {
   @extend .flexColumn;
@@ -10,7 +11,7 @@
   border-radius:3px;
   margin:3px 0;
   padding:5px;
-  border: 1px solid #888888;
+  border: 1px solid $modal-input-grey;
 }
 
 .multilineInputFieldContainer {
@@ -23,6 +24,6 @@
   border-radius:3px;
   margin:3px 0;
   padding:5px;
-  border: 1px solid #888888;
+  border: 1px solid $modal-input-grey;
   resize: none;
 }

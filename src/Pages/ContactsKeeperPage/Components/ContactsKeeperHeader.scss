@@ -1,9 +1,11 @@
+@import '../../../scss/colors';
+
 .contactsKeeperHeaderContainer {
   margin: 0 0 50px 0;
 }
 
 .orangeBox {
-  background-color: #f58025;
+  background-color: $procore-orange;
   padding: 25px 0 17px 30px;
   color: #fff;
   font-size: 18px;
@@ -12,5 +14,5 @@
 
 .greyBox {
   height: 21px;
-  background-color: #E7E7E7;
+  background-color: $table-cell-border-grey;
 }

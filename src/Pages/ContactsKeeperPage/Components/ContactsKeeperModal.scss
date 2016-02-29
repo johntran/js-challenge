@@ -1,4 +1,5 @@
-@import '../../scss/flex';
+@import '../../../scss/flex',
+'../../../scss/colors';
 
 .fieldContainer {
   @extend .flexRow;
@@ -24,7 +25,7 @@
 }
 
 .saveButton {
-  background-color: #676767;
+  background-color: $input-border-grey;
   border: 0;
   border-radius: 3px;
   color: #fff;
@@ -41,7 +42,7 @@
 }
 
 .orangeBox {
-  background-color: #f58025;
+  background-color: $procore-orange;
   padding: 25px 0 17px 30px;
   color: #fff;
   font-size: 18px;
@@ -50,6 +51,6 @@
 
 .greyBox {
   height: 21px;
-  background-color: #E7E7E7;
+  background-color: $table-cell-border-grey;
 }
 

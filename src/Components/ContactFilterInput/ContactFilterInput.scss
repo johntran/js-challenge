@@ -1,15 +1,16 @@
+@import "../../scss/colors";
+
 .searchIcon {
-  background-color: #216FB5;
+  background-color: $procore-blue;
   border: 0;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   width: 50px;
 }
 .searchBar {
-  //border-radius: 3px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-  border: 1px solid #676767;
+  border: 1px solid $input-border-grey;
   border-right: 0;
   width: 190px;
   padding: 0 0 0 20px;

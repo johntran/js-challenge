@@ -1,9 +1,10 @@
+@import "../../scss/colors";
 .addButtonContainer {
   margin: 0 0 0 auto;
 }
 
 .addButton {
-  background-color: #216FB5;
+  background-color: $procore-blue;
   display: flex;
   flex-direction: row;
   border: 0;

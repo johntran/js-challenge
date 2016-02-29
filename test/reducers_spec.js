@@ -55,7 +55,7 @@ describe('Contacts Keeper Page Reducers', () => {
             it('adding contact adds to allContacts', () => {
                 expect(addedContactState.contactsTable.allContacts).to.eql([...mocks.arrayDatabase, mocks.pippinArray])
             })
-            
+
         })
     })
 })

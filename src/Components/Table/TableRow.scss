@@ -1,4 +1,5 @@
 @import "../../scss/flex",
+"../../scss/colors",
 "TableCell"
 ;
 
@@ -8,7 +9,7 @@
 
 .tableHeaderCell {
   @extend .tableCell;
-  background-color: #676767;
+  background-color: $input-border-grey;
   color: #fff;
   padding: 10px 0;
   border-right: 1px solid #fff;

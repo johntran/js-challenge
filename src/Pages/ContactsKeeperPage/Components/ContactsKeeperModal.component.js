@@ -1,6 +1,6 @@
 import React from 'react';
-import FieldInput from './../../Components/FieldInput/FieldInput.component.js';
-import Modal from './../../Components/Modal/Modal.component.js'
+import FieldInput from './../../../Components/FieldInput/FieldInput.component.js';
+import Modal from './../../../Components/Modal/Modal.component.js'
 import {fieldContainer, leftColumn, rightColumn, modalContainer, separation, saveButton, saveButtonContainer} from './ContactsKeeperModal.scss';
 
 const leftColumnFields = [['First Name', 'firstName'], ['Date of Birth', 'dob'], ['Email', 'email']];
